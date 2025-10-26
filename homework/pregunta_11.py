@@ -22,3 +22,15 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
+    import pandas as pd
+    
+    # Leer el archivo tbl1.tsv
+    df = pd.read_csv("files/input/tbl1.tsv", sep="\t")
+    
+    # Hacer una copia para no modificar el original
+    df_copy = df.copy()
+    
+    # Agrupar por c0 y concatenar los valores de c4 ordenados alfabéticamente
+    result = df_copy.groupby('c0')['c4'].apply(lambda x: ','.join(sorted(x))).reset_index()
+    
+    return result

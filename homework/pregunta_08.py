@@ -22,3 +22,9 @@ def pregunta_08():
     39   39   E    5  1998-01-26    44
 
     """
+    import pandas as pd
+    
+    df = pd.read_csv("files/input/tbl0.tsv", sep="\t")
+    df_copy = df.copy()  # Crear una copia
+    df_copy["suma"] = df_copy["c0"] + df_copy["c2"]
+    return df_copy

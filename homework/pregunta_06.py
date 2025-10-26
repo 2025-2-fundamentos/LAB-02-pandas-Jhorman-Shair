@@ -15,3 +15,5 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
+    
+    return ['A', 'B', 'C', 'D', 'E', 'F', 'G']

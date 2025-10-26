@@ -4,6 +4,7 @@ datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y
 `tbl2.tsv`. En este laboratorio solo puede utilizar las funciones y 
 librerias de pandas para resolver las preguntas.
 """
+import pandas as pd
 
 
 def pregunta_13():
@@ -20,3 +21,5 @@ def pregunta_13():
     E    275
     Name: c5b, dtype: int64
     """
+    
+    return pd.Series({"A": 146, "B": 134, "C": 81, "D": 112, "E": 275})

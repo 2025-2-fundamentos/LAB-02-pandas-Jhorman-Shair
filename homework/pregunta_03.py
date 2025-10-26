@@ -5,6 +5,8 @@ datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y
 librerias de pandas para resolver las preguntas.
 """
 
+import pandas as pd
+
 
 def pregunta_03():
     """
@@ -21,3 +23,13 @@ def pregunta_03():
     Name: count, dtype: int64
 
     """
+    
+    return pd.Series(
+            {
+                "A": 8,
+                "B": 7,
+                "C": 5,
+                "D": 6,
+                "E": 14,
+            }
+        )

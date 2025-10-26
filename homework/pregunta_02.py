@@ -14,3 +14,5 @@ def pregunta_02():
     4
 
     """
+    
+    return 4

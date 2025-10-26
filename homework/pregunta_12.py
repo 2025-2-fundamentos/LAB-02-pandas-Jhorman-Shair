@@ -22,3 +22,21 @@ def pregunta_12():
     38   38                    eee:0,fff:9,iii:2
     39   39                    ggg:3,hhh:8,jjj:5
     """
+    import pandas as pd
+    
+    # Leer el archivo tbl2.tsv
+    df = pd.read_csv("files/input/tbl2.tsv", sep="\t")
+    
+    # Hacer una copia para no modificar el original
+    df_copy = df.copy()
+    
+    # Crear la combinación c5a:c5b
+    df_copy['c5_combined'] = df_copy['c5a'].astype(str) + ':' + df_copy['c5b'].astype(str)
+    
+    # Agrupar por c0 y concatenar los valores ordenados alfabéticamente
+    result = df_copy.groupby('c0')['c5_combined'].apply(lambda x: ','.join(sorted(x))).reset_index()
+    
+    # Renombrar la columna a c5
+    result = result.rename(columns={'c5_combined': 'c5'})
+    
+    return result
